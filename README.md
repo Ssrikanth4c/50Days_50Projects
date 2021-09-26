@@ -1,6 +1,6 @@
 # 50Days\_ 50Projects
 
-> Project-based teaching to sharpen your HTML, CSS, and JavaScript skills
+> Project-based teaching to sharpen our HTML, CSS, and JavaScript skills
 
 > 50 mini projects in HTML, CSS, and JavaScript that relate to the DOM (**Document Object Model**)
 
