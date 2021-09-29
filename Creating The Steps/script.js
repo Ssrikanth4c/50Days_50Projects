@@ -9,39 +9,24 @@ const updateProgress=()=>{
     progress.style.width=`${progressPercentage*100}%`
 }
 const handleNext=()=>{
-    if(step === circle.length){
-        step= circle.length
-    }else{
-        circle[step].classList.add('active')
-        step++;
-    }
-    // console.log(step, circle.length);
-    /**
-     *  enable or disable buttons
-     *   
-     * */
-    if(step>1){
-        prev.disabled=false;
-    } 
-    if(step==1){
-        prev.disabled=true
-    }
-    if(step<circle.length){
-        next.disabled=false
-    }else{
+    circle[step].classList.add('active');
+    step++;
+    if(step===circle.length){
         next.disabled=true;
+    }else{
+        prev.disabled=false;
     }
     updateProgress();
 }
 const handlePrev=()=>{
-    console.log({step})
-    if(step===1){
-         prev.disabled=true;
-    }else{
-        next.disabled=false;
-        step--
-        circle[step].classList.remove('active')
-    }
+   step--;
+   if(step===1){
+       prev.disabled=true;
+       circle[step].classList.remove('active');
+   }else{
+       circle[step].classList.remove('active');
+       next.disabled=false;
+   }
     updateProgress()
 }
 next.addEventListener('click', handleNext);
